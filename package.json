@@ -1,0 +1,25 @@
+{
+    "name": "html2jquery",
+    "version": "0.0.1",
+    "description": "html2jquery converts HTML into jQuery.",
+    "main": "index.js",
+    "dependencies": {
+        "htmlparser2": "3.8.2"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/manse/html2jquery.git"
+    },
+    "keywords": [
+        "html",
+        "jquery",
+        "dom",
+        "javascript"
+    ],
+    "author": {
+        "name": "Ryota Mannari",
+        "email": "info@manse.jp"
+    },
+    "license": "BSD",
+    "homepage": "https://github.com/manse/html2jquery"
+}
