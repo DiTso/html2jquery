@@ -8,3 +8,10 @@ html2jquery converts HTML into jQuery.
 ```
 npm install html2jquery
 ```
+
+## Usage
+```JavaScript 
+var html2jquery = require('html2jquery');
+var jqCode = html2jquery('<html><body>...</body></html>');
+```
+
