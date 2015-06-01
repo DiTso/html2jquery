@@ -39,6 +39,7 @@ CodeBuilder.prototype = {
         this.code += this.tabs;
         this.code += "$('<" + tree.name + ">')";
         var pattr = this.parseAttr(tree.attr);
+        this.printClass(pattr['class']);
         this.printAttr(pattr.attr);
         this.printStyle(pattr.style);
         this.printOn(pattr.on);
@@ -47,10 +48,12 @@ CodeBuilder.prototype = {
     parseAttr: function (attr) {
         var result = {
             'style': attr.style,
+            'class': attr['class'],
             'attr': {},
             'on': {}
         };
         delete attr.style;
+        delete attr['class'];
         for (var name in attr) {
             if (name.substr(0, 2).toLowerCase() === 'on') {
                 result.on[name.substr(2)] = attr[name];
@@ -59,6 +62,10 @@ CodeBuilder.prototype = {
             }
         }
         return result;
+    },
+    printClass: function(klass) {
+        if (!klass) return;
+        this.code += '.addClass(' + literal(klass) + ')';
     },
     printAttr: function (attr) {
         var lines = [];
